@@ -128,9 +128,9 @@ mobile applications.
   bindings, generators, classes, arrow functions, spread syntax, among others.
 
   It was also during 2015 that ReactJS, the framework that solidified modern day
-  declarative UI patterns, was introduced. It took some concepts of
-  AngularJS with declarative UI but improved them unidirectional data flow,
-  immutability, and the use of the virtual DOM.\@
+  declarative UI patterns, was introduced. It took some concepts of AngularJS
+  with declarative UI but improved them unidirectional data flow, immutability,
+  and the use of the virtual DOM.\@
 
   June 2016 saw the release of the 7th edition of ECMAScript --- ES2016. This
   was a smaller release with few new features introduced such as the exponential
@@ -177,9 +177,9 @@ mobile applications.
   server.
 
   \subsubsection{Let/Const}
-  Unlike var which can be accessed outside the function it was initialized
-  in, let and const are blocked scope so they can only be accessed in the block
-  they were defined in.
+  Unlike var which can be accessed outside the function it was initialized in,
+  let and const are blocked scope so they can only be accessed in the block they
+  were defined in.
 
   \subsubsection{Arrow functions}
   Useful light-weight syntax that further simplified and shortened function
@@ -307,16 +307,84 @@ mobile applications.
 
   \subsubsection{Ownership}
   One of Rust's key defining feature is Ownership. It is a way for Rust to make
-  memory safety guarantees without the need of a garbage collector.
+  memory safety guarantees without the need of a garbage collector. There are
+  three main rules that Rust follows in handling ownership:
 
+  \begin{itemize}
+    \item Each value in Rust has a variable that’s called its owner.
+    \item There can only be one owner at a time.
+    \item When the owner goes out of scope, the value will be dropped.
+  \end{itemize}
 
-  \subsubsection{Pattern Matching}
+  These rules do not differ if the memory used is taken from the stack of from
+  the heap. When the variable goes out of scope, the memory is always returned.
 
-  \subsubsection{Structs}
+  However, there is a difference when copying values from one variable to
+  another. An example of copying values from a variable in the stack is shown in
+  Figure~\ref{fig:copy-stack}
+
+  \begin{figure}[ht]
+    \rust{copy-stack}
+    \caption{Copying Variables from the Stack}
+    \label{fig:copy-stack}
+  \end{figure}
+
+  This example is simple, since a new variable is created and the value is
+  copied. After they go out of scope, both variables will be dropped. However,
+  this is different when the variable is stored in a heap as shown in
+  Figure~\ref{fig:copy-heap}
+
+  \begin{figure}[ht]
+    \rust{copy-heap}
+    \caption{Copying Variables from the Heap}
+    \label{fig:copy-heap}
+  \end{figure}
+
+  Variable \rustin{s1} is stored on the heap as the type \rustin{String} is
+  dynamically allocated. When s1 is copied from \rustin{s2}, \rustin{s1} is
+  invalidated and dropped. This is because when \rustin{s1} is copied into
+  \rustin{s2}, the contents of the heap is not copied, only the pointer to the
+  starting character and other data pertaining to \rustin{s1} is copied. If
+  \rustin{s1} is not dropped, a double free may occur once both variables go out
+  of scope. Hence, the first variable, \rustin{s1} is dropped. This effectively
+  means that \rustin{s1} is moved to \rustin{s2}, instead of being copied.
+
+  Rust also presents a way to deep copy the contents of a value stored on the
+  heap through a method called \rustin{clone()}
+
   \subsubsection{Concurrency}
 
   \subsection{Paradigms}
 
+  \subsubsection{Concurrent}
+
+  \subsubsection{Functional}
+
+  \subsubsection{Generic}
+
+  \subsubsection{Imperative}
+
+  \subsubsection{Structured}
+
+  \subsection{Language Evaluation Criteria}
+
+  \subsubsection{Simplicity}
+
+  \subsubsection{Orthogonality}
+
+  \subsubsection{Data Types}
+
+  \subsubsection{Syntax Design}
+
+  \subsubsection{Support for Abstract}
+
+  \subsubsection{Expressivity}
+
+  \subsubsection{Type Checking}
+
+  \subsubsection{Exception Handling}
+
+  \subsubsection{Restricted Aliasing}
 
   \newpage
   \nocite{*} \printbibliography[heading=bibintoc,title={References}]{}

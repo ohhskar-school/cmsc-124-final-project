@@ -1,0 +1,79 @@
+\message{ !name(final-project.tex)}\documentclass{article}
+
+% Spacing
+\usepackage{setspace}
+\onehalfspacing{}
+
+% Bibliography
+\usepackage[american]{babel}
+\usepackage[style=apa,backend=biber]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\addbibresource{references.bib}
+\usepackage[babel,threshold=2]{csquotes}
+
+% Title
+\title{CMSC 124 Final Project}
+\date{December 31, 2020}
+\author{Tumulak, Patricia Lexa U., \\\and{} Valles, Oscar Vian L.}
+
+% Table of Content
+\setcounter{tocdepth}{2}
+
+% Code Formatting
+\usepackage{minted}
+\usemintedstyle{pastie}
+
+\newcommand{\js}[1]{\inputminted{javascript}{samples/js/#1.js}}
+\newcommand{\rust}[1]{\inputminted{rust}{samples/rust/#1.rs}}
+\newcommand{\jsin}[1]{\mintinline{javascript}{#1}}
+\newcommand{\rustin}[1]{\mintinline{rust}{#1}}
+
+\begin{document}
+
+\message{ !name(final-project.tex) !offset(318) }
+)}
+
+  \subsubsection{Pattern Matching}
+
+  \subsubsection{Structs}
+
+  \subsubsection{Concurrency}
+
+  \subsection{Paradigms}
+
+  \subsubsection{Concurrent}
+
+  \subsubsection{Functional}
+
+  \subsubsection{Generic}
+
+  \subsubsection{Imperative}
+
+  \subsubsection{Structured}
+
+  \subsection{Language Evaluation Criteria}
+
+  \subsubsection{Simplicity}
+
+  \subsubsection{Orthogonality}
+
+  \subsubsection{Data Types}
+
+  \subsubsection{Syntax Design}
+
+  \subsubsection{Support for Abstract}
+
+  \subsubsection{Expressivity}
+
+  \subsubsection{Type Checking}
+
+  \subsubsection{Exception Handling}
+
+  \subsubsection{Restricted Aliasing}
+
+  \newpage
+  \nocite{*} \printbibliography[heading=bibintoc,title={References}]{}
+
+\end{document}
+
+\message{ !name(final-project.tex) !offset(-79) }
