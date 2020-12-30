@@ -3,9 +3,15 @@
 \usepackage{setspace}
 \onehalfspacing{}
 
+\usepackage[american]{babel}
+\usepackage[style=apa,backend=biber]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\addbibresource{references.bib}
+\usepackage[babel,threshold=2]{csquotes}
+
 \title{CMSC 124 Final Project}
 \date{December 31, 2020}
-\author{Tumulak, Patricia Lexa U., and Valles, Oscar Vian L.}
+\author{Tumulak, Patricia Lexa U., \\\and{} Valles, Oscar Vian L.}
 
 \setcounter{tocdepth}{2}
 
@@ -36,7 +42,7 @@ mobile applications.
   JavaScript was developed by Brendan Eich in September 1995 when he was tasked
   to develop a “Scheme for the web browser” --- a simple, dynamic, lightweight,
   and powerful scripting language with syntax that resembled Java for NetScape.
-  It would be accessible to Snon-developers such as designers. The first version
+  It would be accessible to non-developers such as designers. The first version
   of JavaScript was made in only just 10 days. JavaScript was originally named
   Mocha, then called LiveScript, and finally renamed to JavaScript in December
   1995 to make it sound closer to Java and was presented as a scripting language
@@ -83,8 +89,8 @@ mobile applications.
 
   jQuery is a JavaScript library that was initially released in August 2006.
   Created by John Resig, it allows developers to add extra functionality to
-  webpages. According to W3Techs,
-  74.4\% of the top 10 million websites use jQuery as of February 2020.
+  webpages. According to W3Techs, 74.4\% of the top 10 million websites use
+  jQuery as of February 2020.
 
   NodeJS, a server-side runtime for JavaScript, was introduced in May 2009 by
   Ryan Dahl. This was built on Chrome’s V8 engine and it included an event loop.
@@ -113,8 +119,8 @@ mobile applications.
   AngularJS with declarative UI but improved them unidirectional data flow,
   immutability, and the use of the virtual DOM.\@
 
-  June 2016 saw the release of the 7th edition of ECMAScript --- ES2016. This was
-  a smaller release with few new features introduced such as the exponential
+  June 2016 saw the release of the 7th edition of ECMAScript --- ES2016. This
+  was a smaller release with few new features introduced such as the exponential
   operator (**), keywords for asynchronous programming and the
   Array.prototype.includes function.
 
@@ -145,9 +151,9 @@ mobile applications.
   is defined and then more objects can be made using the prototype.
 
   \subsubsection{Interpreted Language}
-  JS script is interpreted by the JavaScript interpreter --- a built-in component
-  of the web browser. In recent years however, just in time compilation is used
-  for JS code such as in Chrome’s V8 engine.
+  JS script is interpreted by the JavaScript interpreter --- a built-in
+  component of the web browser. In recent years however, just in time
+  compilation is used for JS code such as in Chrome’s V8 engine.
 
   \subsubsection{Client-side validations}
   JS is a client-side scripting language. This means that JS functions can run
@@ -225,7 +231,8 @@ mobile applications.
   \subsection{Paradigms}
 
 
-
-
+  \newpage
+  \nocite{*}
+  \printbibliography[heading=bibintoc,title={References}]{}
 
 \end{document}
