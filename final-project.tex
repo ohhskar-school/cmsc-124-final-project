@@ -1,7 +1,7 @@
 \documentclass{article}
 
 \usepackage{setspace}
-\onehalfspacing
+\onehalfspacing{}
 
 \title{CMSC 124 Final Project}
 \date{December 31, 2020}
@@ -34,7 +34,7 @@ mobile applications.
 
   \subsubsection{Mocha}
   JavaScript was developed by Brendan Eich in September 1995 when he was tasked
-  to develop a “Scheme for the web browser” - a simple, dynamic, lightweight,
+  to develop a “Scheme for the web browser” --- a simple, dynamic, lightweight,
   and powerful scripting language with syntax that resembled Java for NetScape.
   It would be accessible to Snon-developers such as designers. The first version
   of JavaScript was made in only just 10 days. JavaScript was originally named
@@ -84,7 +84,7 @@ mobile applications.
   jQuery is a JavaScript library that was initially released in August 2006.
   Created by John Resig, it allows developers to add extra functionality to
   webpages. According to W3Techs,
-  74.4% of the top 10 million websites use jQuery as of February 2020.
+  74.4\% of the top 10 million websites use jQuery as of February 2020.
 
   NodeJS, a server-side runtime for JavaScript, was introduced in May 2009 by
   Ryan Dahl. This was built on Chrome’s V8 engine and it included an event loop.
@@ -111,9 +111,9 @@ mobile applications.
   It was also during 2015 that ReactJS, the framework that solidified modern day
   declarative UI patterns, was introduced. It took some of the concepts of
   AngularJS with declarative UI but improved them unidirectional data flow,
-  immutability, and the use of the virtual DOM.
+  immutability, and the use of the virtual DOM.\@
 
-  June 2016 saw the release of the 7th edition of ECMAScript - ES2016. This was
+  June 2016 saw the release of the 7th edition of ECMAScript --- ES2016. This was
   a smaller release with few new features introduced such as the exponential
   operator (**), keywords for asynchronous programming and the
   Array.prototype.includes function.
@@ -145,7 +145,7 @@ mobile applications.
   is defined and then more objects can be made using the prototype.
 
   \subsubsection{Interpreted Language}
-  JS script is interpreted by the JavaScript interpreter - a built-in component
+  JS script is interpreted by the JavaScript interpreter --- a built-in component
   of the web browser. In recent years however, just in time compilation is used
   for JS code such as in Chrome’s V8 engine.
 
@@ -172,6 +172,60 @@ mobile applications.
   object prototypes, this makes it object-oriented. The use of first-class
   functions, arrow functions (which are basically lambdas), and closures make
   the language functional (aka declarative) as well.
+
+  \section{Rust}
+
+  \subsection{Purpose}
+  \subsection{History}
+  \subsubsection{The Personal Years (2006--2010)}
+  Graydon Hoare started working on a compiled, concurrent, safe, systems
+  programming language as a hobby and as a research project. These were some of
+  the following descriptions that Hoare wrote as Rust was beginning: Memory
+  Safety, Typestate system, Mutability control, Side-effect control, and Garbage
+  Control. Some of these remained throughout the years, some were also scrapped.
+  At this point, \textasciitilde90\% of the language features and
+  \textasciitilde70\% of the runtime was roughly working.
+
+  \subsubsection{The Graydon Years (2010--2012)}
+  During this time, Rust was adopted by Mozilla for use in their Servo project.
+  This project was a rewrite of the Gecko rendering engine used for Firefox.
+  Development of both Servo and Rust was parallel. Features were dogfooded by
+  the Rust and Servo team and the language was iterated upon based on the
+  feedback from both teams. During this time period Graydon became a benevolent
+  dictator for life-like figure for Rust, much like how Linus Trovald is a
+  benevolent dictator for life-like figure for Linux.
+
+  \subsubsection{The Typesystem Years (2012--2014)}
+  During this time period, the team grew and incorporated more experts that had
+  experience with advanced type systems. Due to this, the type system also grew
+  as well. As the type system grew, functionality found in the language was
+  transferred into libraries. In addition, the package manager of the language,
+  Cargo, was also implemented during this period. At this time, Graydon stepped
+  down from the project. This allowed the project to be able to democratically
+  improve the project, since a singular authority to determine what is best for
+  the language is not present.
+
+  \subsubsection{The Release Years (2015--May 2016)}
+  Rust released 1.0.0-alpha back in January 9, 2015, 1.0.0-beta1 on February 16,
+  2015 and a 1.0.0 on May 15, 2015. The 1.0.0 release guarantees that Rust as a
+  language will continue to change, but it will do so in a backwards-compatible
+  manner. This meant that stability will be maintained in its various versions.
+  Four aspects of the language were also improved during this period: ecosystem,
+  tooling, stability, and community.
+
+  \subsubsection{The Production Years (May 2016--Present)}
+  Nowadays, Rust has released version 1.48.0 and is widely used in various
+  industries. Companies like Firefox, Dropbox, Cloudfare, and NPM all use Rust
+  in some form or another. Rust has also gained popularity in developer circles,
+  being the most loved programming language for two years in a row, according to
+  StackOverflow. The number of Crates found in Crates.io has also ballooned to
+  51,833, as of December 30, 2020.
+
+  \subsection{Language Features}
+  \subsection{Paradigms}
+
+
+
 
 
 \end{document}
