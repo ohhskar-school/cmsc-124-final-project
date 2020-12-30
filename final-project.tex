@@ -442,22 +442,55 @@ mobile applications.
   \subsection{Language Evaluation Criteria}
 
   \subsubsection{Simplicity}
+  Rust is not that simple, it has many basic constructs, with
+  complicated concepts and meanings.
 
   \subsubsection{Orthogonality}
+  Rust is very orthogonal, every possible combination of primitives is possible.
+  There is a very little amount of exceptions present in the language.
 
   \subsubsection{Data Types}
+  Rust's main feature is its robust data type system. Rust has adequate
+  facilities for defining data types and structures through the usage of Structs
+  and Generics
 
   \subsubsection{Syntax Design}
+  Rust's syntax design is based on C and C++, with additions from scripting
+  languages and functional programming. It has explicit special words, but has
+  truncated them. Most evidently with functions written as \rustin{fn}, mutable
+  as \rustin{mut}, constant as \rustin{const}. Increasing writability but
+  greatly reducing readability
 
-  \subsubsection{Support for Abstract}
+  \subsubsection{Support for Abstraction}
+  Rust allows Support of Abstraction through functions and generics.
 
   \subsubsection{Expressivity}
+  Rust is not that expressive, for the sake of achieving reliability. Most of
+  the time, there is a singular 'Rust Way' of solving a problem. This way
+  usually greatly reduces the errors that may occur and increases readability.
+  One great example is the removal of the shorthand \mintinline{c++}{count++} in
+  favor of \rustin{count = count + 1} or \rustin{x += 1} as it is less ambiguous
+  for readers.
+
 
   \subsubsection{Type Checking}
+  Due to its robust data type system, type checking is also very strong in Rust.
+  It is not strongly typed, as variable types may be implied by the compiler but
+  type annotations help when the compiler cannot find a unique type for a
+  variable. Type checking is done at compile-time and is very thorough with
+  expressive error messages.
 
   \subsubsection{Exception Handling}
+  Exception handling in Rust is exemplary. The compiler enforces code to always
+  handle error cases. However, Rust does not have exceptions, but rather has two
+  types of errors. /rustin{Result<T,E>} for recoverable errors and a
+  /rustin{panic!} macro for unrecoverable errors. This gives the programmer
+  better ways to handle errors in the program.
 
   \subsubsection{Restricted Aliasing}
+  Aliasing is very restricted in Rust because of one key feature in the
+  language: Ownership. Ownership prevents a lot of errors that may occur due to
+  aliasing.
 
   \newpage
   \nocite{*} \printbibliography[heading=bibintoc,title={References}]{}
