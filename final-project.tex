@@ -28,6 +28,9 @@
 \newcommand{\jsin}[1]{\mintinline{javascript}{#1}}
 \newcommand{\rustin}[1]{\mintinline{rust}{#1}}
 
+% Positioning
+\usepackage{float}
+
 \begin{document}
 
 \pagenumbering{gobble}
@@ -239,7 +242,7 @@ mobile applications.
   First-class functions can be passed as an argument to another function,
   returned from another function, and stored in an array, variable, or object.
 
-  Lambdas (arrow functions in JavaScript) make code more succinct. It’s body can
+  Lambdas (arrow functions in JavaScript) make code more succinct. Its body can
   be an expression or a statement block.
 
   Closures are the collection of all variables within the scope of a function
@@ -318,7 +321,7 @@ mobile applications.
   JavaScript, being dynamically typed, makes it difficult to run type checks
   before program execution. There are some tools to conduct this but it adds
   another step to the process of building code. Type checking during execution
-  also results in the performance suffering and a tendency for mistakes. This
+  also results in the performance suffering and a tendency for mistakes. These
   makes type checking in JavaScript not very reliable.
 
   \subsubsection{Exception Handling}
@@ -426,7 +429,7 @@ mobile applications.
   values.
 
   Even if variables are immutable by default, constants are also available in
-  Rust. One key difference between variables and constants is the ability to be
+  Rust. One key difference between variables and constants is the ability to
   change its mutability. Variables can be mutable, while constants will always
   be immutable
 
@@ -621,7 +624,7 @@ mobile applications.
   It is not strongly typed, as variable types may be implied by the compiler but
   type annotations help when the compiler cannot find a unique type for a
   variable. Type checking is done at compile-time and is very thorough with
-  expressive error messages. This makes rust very reliable.
+  expressive error messages. These makes rust very reliable.
 
   \subsubsection{Exception Handling}
   Exception handling in Rust is exemplary. The compiler enforces code to always
@@ -635,6 +638,61 @@ mobile applications.
   Aliasing is very restricted in Rust because of one key feature in the
   language: Ownership. Ownership prevents a lot of errors that may occur due to
   aliasing. This is one of the main reasons for Rust's reliability
+
+  \section{Feature 1: Event Listeners}
+  \subsection{Description}
+  Event listeners in JavaScript follow an Observer Pattern where events, also
+  known as the subject in the Observer Pattern, notify event listeners or
+  observers that are subscribed to the events. This is used in JavaScript to
+  react to events that are asynchronous in nature. Examples include a
+  \jsin{'KeyDown'} event, a \jsin{'wheel'} event, or a \jsin{'load'} event.
+
+  \subsection{Advantages in having the feature}
+  This is allows Event-Driven programming in the language, and allows an easy
+  way to handle asynchronous events
+
+  \subsection{Advantages in not having the feature}
+  It reduces the simplicity of the programming language since it introduces
+  another paradigm to the language
+
+  \subsection{How to implement similar functionality in B}
+  The snippet shown on Figure~\ref{fig:event-emitter} by \cite{shemsedinov}
+  shows how an EventEmitter is implemented in Rust:
+
+  \begin{figure}[H]
+    \inputminted[fontsize=\small]{rust}{samples/rust/event-emitter.rs}
+    \caption{Event Emitter in Rust}
+    \label{fig:event-emitter}
+  \end{figure}
+
+
+  \section{Feature 2: Objects}
+  \subsection{Description}
+  Objects couple data and methods together and hides implementation details that
+  manipulate the data inside an object. JavaScript makes use of objects
+  extensively, making most of the types in the language, like Arrays,
+  Dictionaries, and Strings objects.
+
+  \subsection{Advantages in having the feature}
+  This feature allows the Object-Oriented Programming in the language. This
+  carries the benefits that OOP brings, like reusability, encapsulation,
+  inheritance, among others.
+
+  \subsection{Advantages in not having the feature}
+  It reduces the simplicity of the programming language since it introduces
+  another paradigm to the language
+
+  \subsection{How to implement similar functionality in B}
+  A snippet shown on Figure~\ref{fig:objects} by \cite{klabnik_nichols_2018}
+  shows how methods and data could be coupled together. However, this lacks some
+  OOP functionality like inheritance.
+
+  \begin{figure}[ht]
+    \rust{objects}
+    \caption{OOP-Like Functionality in Rust}
+    \label{fig:objects}
+  \end{figure}
+
 
   \newpage
   \nocite{*} \printbibliography[heading=bibintoc,title={References}]{}
