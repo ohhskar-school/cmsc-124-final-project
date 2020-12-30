@@ -6,7 +6,7 @@
 
 % Bibliography
 \usepackage[american]{babel}
-\usepackage[style=apa,backend=biber]{biblatex}
+\usepackage[style=apa, citestyle=apa, backend=biber]{biblatex}
 \DeclareLanguageMapping{american}{american-apa}
 \addbibresource{references.bib}
 \usepackage[babel,threshold=2]{csquotes}
@@ -255,6 +255,9 @@ mobile applications.
 
   \subsection{Language Features}
 
+  This section is heavily based on the book \citetitle{klabnik_nichols_2018} by
+  \cite{klabnik_nichols_2018}. Code examples are directly lifted from the book.
+
   \subsubsection{Immutability}
   In Rust, by default variables are immutable. In practice, once a value is
   bound to a name, the value cannot be changed. This prevents bugs where
@@ -291,8 +294,8 @@ mobile applications.
   of the variables at compile time. Despite that, it is not strongly typed. The
   compiler may infer the type based on what the value is and how it is used.
   Figure~\ref{fig:immut} shows this clearly where the type of the variable is
-  not explicitly stated. However, there are cases where the cannot accurately
-  determine what the type is, hence a type annotation is required
+  not explicitly stated. However, there are cases where the compiler cannot
+  accurately determine what the type is, hence a type annotation is required
 
   \begin{figure}[ht]
     \rust{annotations}
@@ -352,19 +355,89 @@ mobile applications.
   Rust also presents a way to deep copy the contents of a value stored on the
   heap through a method called \rustin{clone()}
 
-  \subsubsection{Concurrency}
+  \subsubsection{Smart Pointers}
+  The four most common smart pointers used in Rust are the following:
+  \rustin{Box<T>}, \rustin{Rc<T>}, \rustin{RefCell<T>}
+
+  \rustin{Box<T>} stores a pointer on the stack that points to data found on the
+  heap. It can be used during the following situations:
+  \begin{itemize}
+    \item When a type's size is not known on compile time and a value of that
+          type needs an exact size
+    \item When a large amount of data needs to be stored and ownership needs to
+          be transferred, but a copy should not happen.
+  \end{itemize}
+
+  \rustin{Rc<T>} allows values to have multiple owners. This type keeps track of
+  the references that point to a value, and is destroyed when the number of
+  references reaches zero.
+
+  \rustin{RefCell<T>} is almost the same as \rustin{Box<T>}. The main difference
+  from the two is the rules of ownership apply to \rustin{RefCell<T>} on
+  runtime, rather than compile time. When the rules are broken on
+  \rustin{Box<T>}, the compile errors out, when the rules are broken on
+  \rustin{RefCell<T>}, the program panics and exits.
 
   \subsection{Paradigms}
 
+  This section is heavily based on the book \citetitle{klabnik_nichols_2018} by
+  \cite{klabnik_nichols_2018}. Code examples are directly lifted from the book.
+
   \subsubsection{Concurrent}
+  Rust allows safe concurrency through the ownership and type systems that Rust
+  has. These features of Rust allow the error-checking of the compiler to find
+  concurrency errors during compile-time rather than at runtime.
+
+  An simple example of a concurrent program is shown in Figure~\ref{fig:thread}:
+
+  \begin{figure}[ht]
+    \rust{thread}
+    \caption{Spawning Multiple Threads}
+    \label{fig:thread}
+  \end{figure}
 
   \subsubsection{Functional}
+  Rust has the following features that allow functional programming: Closures
+  and Iterators.
+
+  Closures are anonymous functions that can be saved in a variable or passed as
+  arguments. They capture the scope from where they are defined. An example of a
+  closure in Rust is shown in Figure~\ref{fig:closure}
+
+  \begin{figure}[ht]
+    \rust{thread}
+    \caption{Closures in Rust}
+    \label{fig:closure}
+  \end{figure}
+
+  Iterators are responsible for iterating over each item. An example of an
+  iterator in Rust is shown in Figure~\ref{fig:iterator} where \rustin{v1_iter}
+  is an iterator that iterate over the values in the vector \rustin{v1}
+
+  \begin{figure}[ht]
+    \rust{iterator}
+    \caption{Iterators in Rust}
+    \label{fig:iterator}
+  \end{figure}
 
   \subsubsection{Generic}
+  Rust allows generic programming through generics. Generics are stand-ins for
+  other concrete types or properties that are not yet defined. A function with
+  Generics is shown in Figure~\ref{fig:generic}, where the function
+  \rustin{largest<T>(list: &[T])}, can take any list with arbitrary data types
+  like i32, u32, u8, etc. Generics are like templates found in C++.
+
+  \begin{figure}[ht]
+    \rust{iterator}
+    \caption{Generics in Rust}
+    \label{fig:generic}
+  \end{figure}
+
 
   \subsubsection{Imperative}
-
-  \subsubsection{Structured}
+  Rust is imperative by nature, as it was influenced by C and C++. All figures
+  shown before present code that provide evidence of the imperative nature of
+  Rust.
 
   \subsection{Language Evaluation Criteria}
 
