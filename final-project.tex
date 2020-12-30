@@ -1,0 +1,177 @@
+\documentclass{article}
+
+\usepackage{setspace}
+\onehalfspacing
+
+\title{CMSC 124 Final Project}
+\date{December 31, 2020}
+\author{Tumulak, Patricia Lexa U., and Valles, Oscar Vian L.}
+
+\setcounter{tocdepth}{2}
+
+\begin{document}
+
+\pagenumbering{gobble}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+\section{Javascript}
+\subsection{Purpose and Motivations}
+JavaScript or JS was first made to provide a lightweight programming language
+for NetScape that would make web development more accessible instead of
+requiring deeper training. Today, it is now one of the most widely used
+programming languages and is mainly used to build websites and web-based
+applications. This is because it allows the creation of interactive elements for
+web pages that enhances the user experience. While HTML and CSS give web pages
+structure, JavaScript gives it responsiveness that engages the user. It is also
+not limited to just web technology but is also used in game development and
+mobile applications.
+
+\subsection{History}
+
+  \subsubsection{Mocha}
+  JavaScript was developed by Brendan Eich in September 1995 when he was tasked
+  to develop a “Scheme for the web browser” - a simple, dynamic, lightweight,
+  and powerful scripting language with syntax that resembled Java for NetScape.
+  It would be accessible to Snon-developers such as designers. The first version
+  of JavaScript was made in only just 10 days. JavaScript was originally named
+  Mocha, then called LiveScript, and finally renamed to JavaScript in December
+  1995 to make it sound closer to Java and was presented as a scripting language
+  for client-side tasks in the browser.
+
+  \subsubsection{ES1 and 2}
+  With Microsoft’s development of their own web browser, Internet Explorer, they
+  developed their own language similar to Javascript called JScript. With the
+  rapid growth of the internet, the need to standardize JavaScript was realized.
+  NetScape tapped the European Computer Manufacturers Association (ECMA) to make
+  a standardized language. In June 1997, the first version of the ECMAScript,
+  labelled ECMA-262, was released. Due to trademark reasons, ECMA could not use
+  JavaScript for the name of the standardized language and so, JavaScript is its
+  commercial name.
+
+  ECMAScript 2 or ES2 was released in June 1998 with relatively no new features
+  to the language and only fixed a few inconsistencies between the ECMA and ISO
+  standard for JavaScript.
+
+  \subsubsection{ES3}
+  ECMAScript 3 (or ES3) was released in December 1999 with changes to features
+  were made such as regular expressions, exceptions and try/catch blocks,
+  do-while block, the operators in and instanceof, and more.
+
+  It was also during this time that AJAX (asynchronous JavaScript and XML) was
+  born which was a technique that allowed pages to be updated asynchronously
+  using JavaScript and browser built-in XMLHttpRequest object. The term AJAX was
+  coined by Jesse James Garrett.
+
+  \subsubsection{ES3.1 and ES4}
+  As soon as ES3 was released in 1999, work on ES4 had already begun. The goal
+  for this version of ECMAScript was to design features that allowed JavaScript
+  to be used on the enterprise scale. However, conflict within the committee
+  that worked on it (with representatives from Adobe, Mozilla, Opera, Microsoft,
+  and Yahoo) started to arise. Some parties within expressed concern that ES4
+  was beginning to get “too big and was out of control”. These were words by
+  Douglas Crockford, an influential JavaScript developer from Yahoo. Microsoft
+  also supported Doug’s concerns and eventually, the group split off to work on
+  ES4 and another separate idea called ES3.1 which was a simpler proposal with
+  no new syntax and only practical improvements. ES4 ended up being too complex
+  and was finally scrapped in 2008. Eventually ES4 found its way into the market
+  as ActionScript developed by Adobe which was the scripting language supported
+  by Flash.
+
+  jQuery is a JavaScript library that was initially released in August 2006.
+  Created by John Resig, it allows developers to add extra functionality to
+  webpages. According to W3Techs,
+  74.4% of the top 10 million websites use jQuery as of February 2020.
+
+  NodeJS, a server-side runtime for JavaScript, was introduced in May 2009 by
+  Ryan Dahl. This was built on Chrome’s V8 engine and it included an event loop.
+  This helped build real-time web applications that scale. This also enabled
+  developers to build a web app stack using only one programming language. This
+  paradigm is called JavaScript Everywhere.
+
+  \subsubsection{ES5}
+  ECMAScript 3.1 was completed and released in December 2009, exactly 10 years
+  after ES3. ECMAScript 3.1 was renamed ECMAScript 5 by the committee to avoid
+  confusion. It was supported by Firefox 4, Chrome 19, Safari 6, Opera 12.10,
+  and Internet Explorer 10. ES5 featured updates to the language such as
+  getter/setters, reserved words, new methods for Object, Array, and Date, JSON
+  support, among others. This did not require any changes to syntax.
+
+  Another iteration of ES5 called ECMAScript 5.1 was released in 2011. However,
+  this did not provide new features but only clarified ambiguous points.
+
+  \subsubsection{ES6 (ES2015) and ES7 (ES2016)}
+  2015 introduced a huge leap forward for JavaScript with the release of ES6 or
+  ES2015 with the introduction of features such as promises, let and const
+  bindings, generators, classes, arrow functions, spread syntax, among others.
+
+  It was also during 2015 that ReactJS, the framework that solidified modern day
+  declarative UI patterns, was introduced. It took some of the concepts of
+  AngularJS with declarative UI but improved them unidirectional data flow,
+  immutability, and the use of the virtual DOM.
+
+  June 2016 saw the release of the 7th edition of ECMAScript - ES2016. This was
+  a smaller release with few new features introduced such as the exponential
+  operator (**), keywords for asynchronous programming and the
+  Array.prototype.includes function.
+
+  \subsubsection{ES8, 9, 10 (ES2017, 2018, 2019)}
+  For the next three years, more features were added in subsequent editions of
+  ECMAScript. This included but not limited to features such as functions for
+  easy Object manipulation, rest/spread operators for object literals,
+  asynchronous iteration, and changes to Array.sort and Object.fromEntries.
+
+  \subsubsection{ES11 (ES2020)}
+  Published in June 2020, ECMAScript 2020 included new functions, the primitive
+  type BigInt for integers that were arbitrarily sized, the nullish coalescing
+  operator, and the globalThis object.
+
+  \subsection{Language Features}
+
+  \subsubsection{Java-like syntax}
+  JS shares syntax with Java such as the use of brackets, semicolons to end
+  statements, return statements, if and do..while statements
+
+  \subsubsection{Dynamic typing}
+  JS supports dynamic typing, allowing a variable’s type to be
+  determined/defined based on the value stored
+
+  \subsubsection{Prototypal Inheritance}
+  JS uses prototypes instead of classes or inheritance. Unlike Java where we
+  create a class then the objects for those classes, in JS, an object prototype
+  is defined and then more objects can be made using the prototype.
+
+  \subsubsection{Interpreted Language}
+  JS script is interpreted by the JavaScript interpreter - a built-in component
+  of the web browser. In recent years however, just in time compilation is used
+  for JS code such as in Chrome’s V8 engine.
+
+  \subsubsection{Client-side validations}
+  JS is a client-side scripting language. This means that JS functions can run
+  even after the webpage has been loaded without communication with the server
+  because the source code is processed by the client’s web browser instead of
+  the web server. This makes JS very useful for things such as forms with the
+  capability to validate errors in user input before sending the data to the
+  server.
+
+  \subsubsection{Let/Const}
+  Unlike var which can be accessed outside of the function it was initialized
+  in, let and const are blocked scope so they can only be accessed in the block
+  they were defined in.
+
+  \subsubsection{Arrow functions}
+  Useful light-weight syntax that further simplified and shortened function
+  syntax and lessened the number of lines of code
+
+  \subsection{Paradigms}
+  JavaScript is a multi-paradigm language. It supports both object-oriented
+  programming as well as functional programming. With prototypal inheritance and
+  object prototypes, this makes it object-oriented. The use of first-class
+  functions, arrow functions (which are basically lambdas), and closures make
+  the language functional (aka declarative) as well.
+
+
+\end{document}
