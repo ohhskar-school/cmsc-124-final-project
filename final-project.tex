@@ -1,19 +1,32 @@
 \documentclass{article}
 
+% Spacing
 \usepackage{setspace}
 \onehalfspacing{}
 
+% Bibliography
 \usepackage[american]{babel}
 \usepackage[style=apa,backend=biber]{biblatex}
 \DeclareLanguageMapping{american}{american-apa}
 \addbibresource{references.bib}
 \usepackage[babel,threshold=2]{csquotes}
 
+% Title
 \title{CMSC 124 Final Project}
 \date{December 31, 2020}
 \author{Tumulak, Patricia Lexa U., \\\and{} Valles, Oscar Vian L.}
 
+% Table of Content
 \setcounter{tocdepth}{2}
+
+% Code Formatting
+\usepackage{minted}
+\usemintedstyle{pastie}
+
+\newcommand{\js}[1]{\inputminted{javascript}{samples/js/#1.js}}
+\newcommand{\rust}[1]{\inputminted{rust}{samples/rust/#1.rs}}
+\newcommand{\jsin}[1]{\mintinline{javascript}{#1}}
+\newcommand{\rustin}[1]{\mintinline{rust}{#1}}
 
 \begin{document}
 
@@ -94,7 +107,7 @@ mobile applications.
 
   NodeJS, a server-side runtime for JavaScript, was introduced in May 2009 by
   Ryan Dahl. This was built on Chrome’s V8 engine and it included an event loop.
-  This helped build real-time web applications that scale. This also enabled
+  This helped build real-time web applications that scale. NodeJS also enabled
   developers to build a web app stack using only one programming language. This
   paradigm is called JavaScript Everywhere.
 
@@ -115,7 +128,7 @@ mobile applications.
   bindings, generators, classes, arrow functions, spread syntax, among others.
 
   It was also during 2015 that ReactJS, the framework that solidified modern day
-  declarative UI patterns, was introduced. It took some of the concepts of
+  declarative UI patterns, was introduced. It took some concepts of
   AngularJS with declarative UI but improved them unidirectional data flow,
   immutability, and the use of the virtual DOM.\@
 
@@ -164,7 +177,7 @@ mobile applications.
   server.
 
   \subsubsection{Let/Const}
-  Unlike var which can be accessed outside of the function it was initialized
+  Unlike var which can be accessed outside the function it was initialized
   in, let and const are blocked scope so they can only be accessed in the block
   they were defined in.
 
@@ -225,7 +238,7 @@ mobile applications.
   the language is not present.
 
   \subsubsection{The Release Years (2015--May 2016)}
-  Rust released 1.0.0-alpha back in January 9, 2015, 1.0.0-beta1 on February 16,
+  Rust released 1.0.0-alpha back on January 9, 2015, 1.0.0-beta1 on February 16,
   2015 and a 1.0.0 on May 15, 2015. The 1.0.0 release guarantees that Rust as a
   language will continue to change, but it will do so in a backwards-compatible
   manner. This meant that stability will be maintained in its various versions.
@@ -241,6 +254,67 @@ mobile applications.
   51,833, as of December 30, 2020.
 
   \subsection{Language Features}
+
+  \subsubsection{Immutability}
+  In Rust, by default variables are immutable. In practice, once a value is
+  bound to a name, the value cannot be changed. This prevents bugs where
+  assumptions are made about values that will never change, but other parts of
+  the code does change that value. The compiler guarantees that once a variable
+  is declared to be immutable, it is immutable in all parts of the code.
+
+  \begin{figure}[ht]
+    \rust{immutability}
+    \caption{Immutable Variable}
+    \label{fig:immut}
+  \end{figure}
+
+  Figure~\ref{fig:immut} will result in a compilation error because x is
+  reassigned a value. However, mutability of a variable may still be possible by
+  adding the keyword \rustin{mut} before assigning the variable.
+
+  \begin{figure}[ht]
+    \rust{mutability}
+    \caption{Mutability Declaration}
+    \label{fig:mut}
+  \end{figure}
+
+  Figure~\ref{fig:mut} will now compile successfully and print the expected
+  values.
+
+  Even if variables are immutable by default, constants are also available in
+  Rust. One key difference between variables and constants is the ability to be
+  change its mutability. Variables can be mutable, while constants will always
+  be immutable
+
+  \subsubsection{Data Types}
+  Rust is a statically typed language where the compiler needs to know the type
+  of the variables at compile time. Despite that, it is not strongly typed. The
+  compiler may infer the type based on what the value is and how it is used.
+  Figure~\ref{fig:immut} shows this clearly where the type of the variable is
+  not explicitly stated. However, there are cases where the cannot accurately
+  determine what the type is, hence a type annotation is required
+
+  \begin{figure}[ht]
+    \rust{annotations}
+    \caption{Annotations on a Variable}
+    \label{fig:annot}
+  \end{figure}
+
+  Figure~\ref{fig:annot} shows an example where the variable \rustin{guess} is
+  given the annotation \rustin{u32} to show that the datatype of the variable is
+  expected to be an unsigned 32bit integer. Otherwise, if not annotated, the
+  compiler will spit out an error since the final type is not clear
+
+  \subsubsection{Ownership}
+  One of Rust's key defining feature is Ownership. It is a way for Rust to make
+  memory safety guarantees without the need of a garbage collector.
+
+
+  \subsubsection{Pattern Matching}
+
+  \subsubsection{Structs}
+  \subsubsection{Concurrency}
+
   \subsection{Paradigms}
 
 
