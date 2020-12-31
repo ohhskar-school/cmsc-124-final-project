@@ -31,6 +31,22 @@
 % Positioning
 \usepackage{float}
 
+% Colors
+\usepackage[dvipsnames]{xcolor}
+
+% Links
+\usepackage{hyperref}
+\hypersetup{
+  pdftitle={CMSC 124 Final Project},
+  pdfstartview={FitH},
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  filecolor=black,
+  urlcolor=MidnightBlue,
+}
+
+
 \begin{document}
 
 \pagenumbering{gobble}
@@ -44,23 +60,23 @@
 \subsection{Purpose and Motivations}
 JavaScript or JS was first made to provide a lightweight programming language
 for NetScape that would make web development more accessible and would not
-require deep training. Today, it is one of the most widely used
-programming languages and is mainly used to build websites and web-based
-applications. This is because it allows the creation of interactive elements for
-web pages that enhances the user experience. While HTML and CSS give web pages
-structure, JavaScript gives it responsiveness that engages the user. It is also
-not limited to just web technology but is also used in game development and
-mobile applications.
+require deep training. Today, it is one of the most widely used programming
+languages and is mainly used to build websites and web-based applications. This
+is because it allows the creation of interactive elements for web pages that
+enhances the user experience. While HTML and CSS give web pages structure,
+JavaScript gives it responsiveness that engages the user. It is also not limited
+to just web technology but is also used in game development and mobile
+applications.
 
 \subsection{History}
 
     \subsubsection{Mocha}
-    Brendan Eich developed JavaScript in September 1995 when he was
-    tasked to develop a “Scheme for the web browser” --- a simple, dynamic,
-    lightweight, and powerful scripting language with syntax that resembled Java
-    for NetScape. It would be accessible to non-developers such as designers.
-    The first version of JavaScript was made in only just 10 days. JavaScript
-    was originally named Mocha, then called LiveScript, and finally renamed to
+    Brendan Eich developed JavaScript in September 1995 when he was tasked to
+    develop a “Scheme for the web browser” --- a simple, dynamic, lightweight,
+    and powerful scripting language with syntax that resembled Java for
+    NetScape. It would be accessible to non-developers such as designers. The
+    first version of JavaScript was made in only just 10 days. JavaScript was
+    originally named Mocha, then called LiveScript, and finally renamed to
     JavaScript in December 1995 to make it sound closer to Java and was
     presented as a scripting language for client-side tasks in the browser.
 
@@ -80,13 +96,13 @@ mobile applications.
 
     \subsubsection{ES3}
     ECMAScript 3 (or ES3) was released in December 1999 with changes to features
-    such as regular expressions, exceptions and try/catch blocks,
-    do-while block, the operators \jsin{in} and \jsin{instanceof}, and more.
+    such as regular expressions, exceptions and try/catch blocks, do-while
+    block, the operators \jsin{in} and \jsin{instanceof}, and more.
 
     It was also during this time that AJAX (asynchronous JavaScript and XML) was
     born which was a technique that allowed pages to be updated asynchronously
-    using JavaScript and browser built-in \jsin{XMLHttpRequest} object. The term AJAX
-    was coined by Jesse James Garrett.
+    using JavaScript and browser built-in \jsin{XMLHttpRequest} object. The term
+    AJAX was coined by Jesse James Garrett.
 
     \subsubsection{ES3.1 and ES4}
     As soon as ES3 was released in 1999, work on ES4 had already begun. The goal
@@ -96,13 +112,13 @@ mobile applications.
     Opera, Microsoft, and Yahoo) started to arise. Some parties within expressed
     concern that ES4 was beginning to get “too big and was out of control”.
     These were words by Douglas Crockford, an influential JavaScript developer
-    from Yahoo (and later, creator of JSON). Microsoft also supported Doug’s 
+    from Yahoo (and later, creator of JSON). Microsoft also supported Doug’s
     concerns and eventually, the group split with some working on ES4 and others
-    separating to work on an idea called ES3.1. This was a simpler proposal with 
-    no new syntax and only practical improvements. ES4 ended up being too complex 
-    and was finally scrapped in 2008. Eventually ES4 found its way into the market 
-    as ActionScript developed by Adobe which was the scripting language supported by 
-    Flash.
+    separating to work on an idea called ES3.1. This was a simpler proposal with
+    no new syntax and only practical improvements. ES4 ended up being too
+    complex and was finally scrapped in 2008. Eventually ES4 found its way into
+    the market as ActionScript developed by Adobe which was the scripting
+    language supported by Flash.
 
     Around this time was also when jQuery and NodeJS emerged.
     
@@ -139,22 +155,22 @@ mobile applications.
     AngularJS with declarative UI but improved them unidirectional data flow,
     immutability, and the use of the virtual DOM.\@
 
-    June 2016 saw the release of the 7th edition of ECMAScript. ES2016
-    was a smaller release with few new features such as the
-    exponential operator \jsin{**}, keywords for asynchronous programming and the
+    June 2016 saw the release of the 7th edition of ECMAScript. ES2016 was a
+    smaller release with few new features such as the exponential operator
+    \jsin{**}, keywords for asynchronous programming and the
     \jsin{Array.prototype.includes} function.
 
     \subsubsection{ES8, 9, 10 (ES2017, 2018, 2019)}
     For the next three years, more features were added in subsequent editions of
     ECMAScript. This included but not limited to features such as functions for
     easy Object manipulation, rest/spread operators for object literals,
-    asynchronous iteration, and changes to \jsin{Array.sort} and 
+    asynchronous iteration, and changes to \jsin{Array.sort} and
     \jsin{Object.fromEntries}.
 
     \subsubsection{ES11 (ES2020)}
     Published in June 2020, ECMAScript 2020 included new functions, the
-    primitive type \jsin{BigInt} for integers that were arbitrarily sized, 
-    the nullish coalescing operator, and the \jsin{globalThis} object.
+    primitive type \jsin{BigInt} for integers that were arbitrarily sized, the
+    nullish coalescing operator, and the \jsin{globalThis} object.
 
     \subsection{Language Features}
 
@@ -163,8 +179,8 @@ mobile applications.
     statements, return statements, if and do..while statements.
 
     \subsubsection{Dynamic typing}
-    JS supports dynamic typing, allowing a variable’s type to be
-    determined or defined based on the value stored.
+    JS supports dynamic typing, allowing a variable’s type to be determined or
+    defined based on the value stored.
 
     \begin{figure}[ht]
       \js{dynamic-typing}
@@ -186,26 +202,26 @@ mobile applications.
 
     \begin{figure}[ht]
       \js{prototype}
-      \caption{Dynamic Types in JavaScript}
+      \caption{Prototypal Inheritance in JavaScript}
       \label{fig:prototype}
     \end{figure}
 
     \subsubsection{Interpreted Language}
-    JS script is interpreted by the JavaScript interpreter --- a built-in
+    JavaScript is interpreted by the JavaScript interpreter --- a built-in
     component of the web browser. In recent years however, just in time
     compilation is used for JS code such as in Chrome’s V8 engine.
 
     \subsubsection{Client-side validations}
     JS is a client-side scripting language. This means that JS functions can run
-    even after the webpage has been loaded without communication with the server.
-    This is because the source code is processed by the client’s web browser instead of
-    the web server. This makes JS very useful for things such as forms with the
-    capability to validate errors in user input before sending the data to the
-    server.
+    even after the webpage has been loaded without communication with the
+    server. This is because the source code is processed by the client’s web
+    browser instead of the web server. This makes JS very useful for things such
+    as forms with the capability to validate errors in user input before sending
+    the data to the server.
 
     \subsubsection{Arrow functions}
-    These are useful light-weight syntax that further simplified and shortened function
-    syntax and lessened the number of lines of code.
+    These are useful light-weight syntax that further simplified and shortened
+    function syntax and lessened the number of lines of code.
 
     \subsubsection{Website Document Manipulation}
     The most common feature that JavaScript is used for is manipulating a
@@ -218,8 +234,8 @@ mobile applications.
       \label{fig:dom-manipulation}
     \end{figure}
 
-    Figure~\ref{fig:dom-manipulation} is a basic example of how a website's content
-    may be programmatically modified through the use of JavaScript.
+    Figure~\ref{fig:dom-manipulation} is a basic example of how a website's
+    content may be programmatically modified through the use of JavaScript.
 
   \subsection{Paradigms}
   JavaScript is a multi-paradigm language. It supports object-oriented
@@ -286,9 +302,9 @@ mobile applications.
 
   \subsubsection{Simplicity}
   JavaScript, with its small number of primitive constructs and large feature
-  multiplicity, is highly writable. Due to this, however, its readability diminishes.
-  On the other hand, JavaScript does not support operator overloading, which
-  helps its readability.
+  multiplicity, is highly writable. Due to this, however, its readability
+  diminishes. On the other hand, JavaScript does not support operator
+  overloading, which helps its readability.
 
   \subsubsection{Orthogonality}
   JavaScript is capable of executing operations on variables of different data
@@ -300,8 +316,8 @@ mobile applications.
   \subsubsection{Data Types}
   JavaScript has a variety of different primitive data types including strings,
   numbers, booleans, null, undefined, symbol, and object. Data types in JS are
-  also dynamically typed. Due to data types in code not being explicitly defined,
-  this makes it harder to read but also easier to write.
+  also dynamically typed. Due to data types in code not being explicitly
+  defined, this makes it harder to read but also easier to write.
 
   \subsubsection{Syntax Design}
   JavaScript’s syntax design shares some similarities with Java such as the use
@@ -316,9 +332,9 @@ mobile applications.
   \subsubsection{Expressivity}
   Functions that would require multiple lines of code in other languages such as
   C could be written and simplified in JavaScript with only a few lines because
-  of the language having operators and lambdas that make code succinct, giving the 
-  language high expressivity. This means the language is very writable as well as
-  reliable.
+  of the language having operators and lambdas that make code succinct, giving
+  the language high expressivity. This means the language is very writable as
+  well as reliable.
 
   \subsubsection{Type Checking}
   JavaScript, being dynamically typed, makes it difficult to run type checks
@@ -522,7 +538,7 @@ mobile applications.
   \rustin{RefCell<T>} is almost the same as \rustin{Box<T>}. The main difference
   from the two is the rules of ownership apply to \rustin{RefCell<T>} on
   runtime, rather than compile time. When the rules are broken on
-  \rustin{Box<T>}, the compile errors out, when the rules are broken on
+  \rustin{Box<T>}, the compiler raises an error, when the rules are broken on
   \rustin{RefCell<T>}, the program panics and exits.
 
   \subsection{Paradigms}
@@ -575,7 +591,7 @@ mobile applications.
   like i32, u32, u8, etc. Generics are like templates found in C++.
 
   \begin{figure}[ht]
-    \rust{iterator}
+    \rust{generics}
     \caption{Generics in Rust}
     \label{fig:generic}
   \end{figure}
@@ -647,11 +663,19 @@ mobile applications.
   known as the subject in the Observer Pattern, notify event listeners or
   observers that are subscribed to the events. This is used in JavaScript to
   react to events that are asynchronous in nature. Examples include a
-  \jsin{'KeyDown'} event, a \jsin{'wheel'} event, or a \jsin{'load'} event.
+  \jsin{'KeyDown'} event, a \jsin{'wheel'} event, or a \jsin{'load'} event. The
+  snippet of code shown in Figure~\ref{fig:events-2} is an example of attaching
+  an event listener to the document
+
+  \begin{figure}[ht]
+    \js{events}
+    \caption{Events in JavaScript}
+    \label{fig:events-2}
+  \end{figure}
 
   \subsection{Advantages in having the feature}
-  This allows Event-Driven programming in the language, and allows an easy
-  way to handle asynchronous events
+  This allows Event-Driven programming in the language, and allows an easy way
+  to handle asynchronous events
 
   \subsection{Advantages in not having the feature}
   It reduces the simplicity of the programming language since it introduces
@@ -678,7 +702,14 @@ mobile applications.
   \subsection{Advantages in having the feature}
   This feature allows the Object-Oriented Programming in the language. This
   carries the benefits that OOP brings, like reusability, encapsulation,
-  inheritance, among others.
+  inheritance, among others. The snippet of code shown in Figure~\ref{fig:oop-2}
+  shows OOP functionality in JavaScript
+
+  \begin{figure}[ht]
+    \js{oop}
+    \caption{OOP in JavaScript}
+    \label{fig:oop-2}
+  \end{figure}
 
   \subsection{Advantages in not having the feature}
   It reduces the simplicity of the programming language since it introduces
@@ -686,8 +717,8 @@ mobile applications.
 
   \subsection{How to implement similar functionality in B}
   A snippet shown on Figure~\ref{fig:objects} by \cite{klabnik_nichols_2018}
-  shows how methods and data could be coupled together. However, this lacks some
-  OOP functionality like inheritance.
+  shows how methods and data could be coupled together. However, Rust still
+  lacks some key OOP features like inheritance.
 
   \begin{figure}[ht]
     \rust{objects}
@@ -696,19 +727,27 @@ mobile applications.
   \end{figure}
 
   \section{Conclusion}
-  Rust and JavaScript are two of the most popular modern programming
-  languages --- JavaScript being one of the core languages for web technology
-  and Rust being Stack Overflow’s most loved language since 2016. The two,
-  however, are conceptually very different not just the with differences in the
-  purpose for their creation --- JavaScript, from the very beginning, was made
-  with the web in mind while Rust was designed for safety to solve problems with
-  C and C++ --- but with their paradigms as well. Where Rust's strength lies in its
-  safety and concurrency, JavaScript thrives in its powerful simplicity despite its
-  weaknesses and issues. This gives the study and analysis of the two programming languages 
-  in conjunction with each other some merit. One language can learn from the other and 
-  could possibly implement some of their features in a way that would be beneficial to both. 
+  Rust and JavaScript are two of the most popular modern programming languages
+  --- JavaScript being one of the core languages for web technology and Rust
+  being Stack Overflow’s most loved language since 2016. The two, however, are
+  conceptually very different, not just the with differences in the purpose for
+  their creation --- JavaScript, from the very beginning, was made with the web
+  in mind while Rust was designed for safety to solve problems with C and C++
+  --- but with their paradigms as well. Where Rust's strength lies in its safety
+  and concurrency, JavaScript thrives in its powerful simplicity despite its
+  weaknesses and issues. This gives the study and analysis of the two
+  programming languages in conjunction with each other some merit. One language
+  can learn from the other and could possibly implement some of their features
+  in a way that would be beneficial to both.
 
   \newpage
   \nocite{*} \printbibliography[heading=bibintoc,title={References}]{}
+
+  \newpage
+  \section{Appendix}
+  \subsection{Source Code}
+  This project was written in \LaTeX{}. The source code of this document can be
+  found at GitHub:
+  \url{https://github.com/ohhskar-school/cmsc-124-final-project}
 
 \end{document}
